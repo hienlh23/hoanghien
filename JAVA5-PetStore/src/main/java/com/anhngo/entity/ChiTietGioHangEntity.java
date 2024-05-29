@@ -16,6 +16,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "chitiet_giohang")
+//
 public class ChiTietGioHangEntity implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
