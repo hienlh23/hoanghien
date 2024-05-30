@@ -19,7 +19,6 @@ public class HomeController {
 	public String home(Model model) {
 		List<ThuCungEntity> thuCungItems = thuCungDAO.findAll();
 		model.addAttribute("thuCungItems", thuCungItems);
-		System.out.println(thuCungItems.size());
 		return "index";
 	}
 

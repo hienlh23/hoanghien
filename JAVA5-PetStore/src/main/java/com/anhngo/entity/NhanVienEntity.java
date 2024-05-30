@@ -30,7 +30,7 @@ public class NhanVienEntity implements Serializable {
 	@Column(name = "email_nv")
 	private String emailNV;
 
-	@Column(name = "sodienthoai_nv")
+	@Column(name = "sdt_nv")
 	private String soDienThoaiNV;
 
 	@OneToMany(mappedBy = "nhanVien")
