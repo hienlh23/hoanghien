@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +8,7 @@
 </head>
 <body>
 	<jsp:include page="nav.jsp" />
-	<h1>Customers Management</h1>
+	<h1>Order Details</h1>
 	<jsp:include page="form.jsp" />
 	<hr>
 	<jsp:include page="table.jsp" />

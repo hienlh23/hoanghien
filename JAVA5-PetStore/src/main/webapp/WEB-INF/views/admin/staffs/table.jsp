@@ -12,27 +12,26 @@
 		<table class="table table-bordered table-hover">
 			<thead class="table-dark">
 				<tr>
-					<th>ID</th>
-					<th>Name</th>
-					<th>Loài</th>
-					<th>Giống</th>
-					<th>Tuổi</th>
-					<th>Giá</th>
+					<th>Mã nhân viên</th>
+					<th>Tên nhân viên</th>
+					<th>Mật khẩu nhân viên</th>
+					<th>Email nhân viên</th>
+					<th>Số điện thoại nhân viên</th>
+					<th>Actions</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach var="item" items="${items}">
 					<tr>
-						<td>${item.maThuCung}</td>
-						<td>${item.tenThuCung}</td>
-						<td>${item.loai}</td>
-						<td>${item.giong}</td>
-						<td>${item.tuoi}</td>
-						<td>${item.gia}</td>
+						<td>${item.maNhanVien}</td>
+						<td>${item.tenNhanVien}</td>
+						<td>${item.matKhauNV}</td>
+						<td>${item.emailNV}</td>
+						<td>${item.soDienThoaiNV}</td>
 						<td><a
-							href="${pageContext.request.contextPath}/admin/pets/edit/${item.maThuCung}">Edit</a>
+							href="/admin/staffs/edit/${item.maNhanVien}">Edit</a>
 							<a
-							href="${pageContext.request.contextPath}/admin/pets/delete/${item.maThuCung}">Delete</a></td>
+							href="/admin/staffs/delete/${item.maNhanVien}">Delete</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

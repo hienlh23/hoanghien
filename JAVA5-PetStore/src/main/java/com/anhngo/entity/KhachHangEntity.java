@@ -30,7 +30,7 @@ public class KhachHangEntity implements Serializable {
 	@Column(name = "matkhau_kh")
 	private String matKhauKH;
 
-	@Column(name = "so_dienthoai_kh")
+	@Column(name = "sdt_kh")
 	private String soDienThoaiKH;
 
 	@Column(name = "diachi_kh")
