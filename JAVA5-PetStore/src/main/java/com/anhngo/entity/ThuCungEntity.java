@@ -37,6 +37,9 @@ public class ThuCungEntity implements Serializable {
 	@Column(name = "gia")
 	private BigDecimal gia;
 
+	@Column(name = "hinhanh")
+	private String hinhAnh;
+
 	@OneToMany(mappedBy = "thuCung")
 	private List<ChiTietDonHangEntity> chiTietDonHang;
 
