@@ -12,6 +12,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 
+
 @Entity
 @Data
 @Table(name = "khachhang")
@@ -41,4 +42,8 @@ public class KhachHangEntity implements Serializable {
 
 	@OneToMany(mappedBy = "khachHang")
 	private List<GioHangEntity> gioHang;
+	public String getCode() {
+	    return this.getCode();
+	}
+
 }
