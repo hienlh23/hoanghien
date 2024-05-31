@@ -7,10 +7,10 @@
 <title>Admin - Pets Management</title>
 </head>
 <body>
-    <jsp:include page="nav.jsp" />
-	<h1>Staffs Management</h1>
-	<jsp:include page="form.jsp" />
-	<hr>
-	<jsp:include page="table.jsp" />
+	<jsp:include page="nav.jsp" />
+	<div class="container d-flex gap-3">
+		<jsp:include page="form.jsp" />
+		<jsp:include page="table.jsp" />
+	</div>
 </body>
 </html>
