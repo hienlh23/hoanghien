@@ -10,12 +10,13 @@
 	<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 	<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 	<form:form action="/admin/pets/index" modelAttribute="item">
-		<form:input path="maThuCung" />
+		<form:hidden path="maThuCung" />
 		<form:input path="tenThuCung" />
 		<form:input path="loai" />
 		<form:input path="giong" />
 		<form:input path="tuoi" />
 		<form:input path="gia" />
+		<form:input path="hinhAnh" />
 		<button formaction="/admin/pets/save">Lưu</button>
 		<button formaction="/admin/pets/update">Sửa</button>
 		<button formaction="/admin/pets/delete/${item.maThuCung}">Xóa</button>

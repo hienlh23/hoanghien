@@ -18,6 +18,8 @@
 					<th>Giống</th>
 					<th>Tuổi</th>
 					<th>Giá</th>
+					<th>Hình ảnh</th>
+					<th>Actions</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -29,6 +31,7 @@
 						<td>${item.giong}</td>
 						<td>${item.tuoi}</td>
 						<td>${item.gia}</td>
+						<td><img id="${item.hinhAnh}" alt="${item.hinhAnh}" src="${item.hinhAnh}"/></td>
 						<td><a
 							href="${pageContext.request.contextPath}/admin/pets/edit/${item.maThuCung}">Edit</a>
 							<a
