@@ -16,8 +16,11 @@
 <body>
 	<div class="container">
 		<div class="row justify-content-center">
-		    <h1>Pets Form</h1>
+			<h1>Pets Form</h1>
 			<form:form action="/admin/pets/index" modelAttribute="item">
+				<div class="mb-3">
+					<form:input path="maThuCung" id="maThuCung" class="form-control" />
+				</div>
 				<div class="mb-3">
 					<label for="tenThuCung" class="form-label">Tên thú cưng</label>
 					<form:input path="tenThuCung" id="tenThuCung" class="form-control" />
@@ -41,8 +44,14 @@
 				</div>
 				<div class="mb-3">
 					<label for="hinhAnh" class="form-label">Hình ảnh</label>
-					<form:input path="hinhAnh" id="hinhAnh" class="form-control" />
+					<form:input  path="hinhAnh" id="hinhAnh" class="form-control" />
 				</div>
+				<%-- <div class="mb-3">
+					<input type="file" name="uploadFile"> <br>
+					<h5>${message}</h5>
+					<h5>${messageUpload}</h5>
+					<img width="300px" alt="" src="/file/${filename}">
+				</div> --%>
 				<div class="mb-3">
 					<button formaction="/admin/pets/save" class="btn btn-primary">Lưu</button>
 					<button formaction="/admin/pets/update" class="btn btn-primary">Sửa</button>

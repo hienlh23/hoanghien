@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
@@ -61,6 +61,23 @@
 			<div class="">
 				<div class="card shadow p-4">
 					<h2 class="mb-4">Danh sách đơn hàng</h2>
+					<form action="/admin/ordersinfo/index" method="get" class="mb-3">
+						<div class="row">
+							<div class="col-md-6">
+								<label for="statusFilter" class="form-label">Lọc theo
+									trạng thái:</label> <select id="statusFilter" name="status"
+									class="form-select">
+									<option value="all">Tất cả</option>
+									<option value="shipped">Đã giao</option>
+									<option value="pending">Chưa giao</option>
+								</select>
+							</div>
+							<div class="col-md-6 d-flex align-items-end">
+								<button type="submit" class="btn btn-primary">Lọc</button>
+							</div>
+						</div>
+					</form>
+
 					<table class="table">
 						<thead>
 							<tr>
@@ -108,21 +125,27 @@ const ctx = document.getElementById('myChart');
 new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['Tổng số đơn hàng', 'Số đơn hàng đã giao', 'Số đơn hàng chưa giao'],
+        labels: ['Đơn hàng'],
         datasets: [{
-            label: 'Số lượng đơn hàng',
-            data: [${totalOrders}, ${totalShippedOrders}, ${totalPendingOrders}],
-            borderWidth: 1,
-            backgroundColor: [
-                'rgba(54, 162, 235, 0.2)', // Màu xanh dương
-                'rgba(75, 192, 192, 0.2)', // Màu xanh lá
-                'rgba(255, 206, 86, 0.2)'  // Màu vàng
-            ],
-            borderColor: [
-                'rgba(54, 162, 235, 1)', // Màu xanh dương
-                'rgba(75, 192, 192, 1)', // Màu xanh lá
-                'rgba(255, 206, 86, 1)'  // Màu vàng
-            ],
+            label: 'Tổng số đơn hàng',
+            data: [${totalOrders}],
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 1
+        },
+        {
+            label: 'Số đơn hàng đã giao',
+            data: [${totalShippedOrders}],
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 1
+        },
+        {
+            label: 'Số đơn hàng chưa giao',
+            data: [${totalPendingOrders}],
+            backgroundColor: 'rgba(255, 206, 86, 0.2)',
+            borderColor: 'rgba(255, 206, 86, 1)',
+            borderWidth: 1
         }]
     },
     options: {

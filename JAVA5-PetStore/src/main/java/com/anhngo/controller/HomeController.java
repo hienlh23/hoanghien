@@ -15,8 +15,15 @@ public class HomeController {
 	@Autowired
 	private ThuCungDAO thuCungDAO;
 
-	@RequestMapping("/index")
+	@RequestMapping("/")
 	public String home(Model model) {
+		List<ThuCungEntity> thuCungItems = thuCungDAO.findAll();
+		model.addAttribute("thuCungItems", thuCungItems);
+		return "index";
+	}
+
+	@RequestMapping("/index/products/view")
+	public String index(Model model) {
 		List<ThuCungEntity> thuCungItems = thuCungDAO.findAll();
 		model.addAttribute("thuCungItems", thuCungItems);
 		return "index";
