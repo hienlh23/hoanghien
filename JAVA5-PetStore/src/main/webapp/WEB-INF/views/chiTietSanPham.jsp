@@ -658,8 +658,8 @@ a:hover {
 						</div>
 						<button type="button" class="btn btn-warning me-2">BUY
 							NOW</button>
-						<button type="button" class="btn btn-primary me-2">ADD TO
-							CART</button>
+						<a href="/cart/details/view/${thuCungDetail.maThuCung}" type="button" class="btn btn-primary me-2">ADD TO
+							CART</a>
 						<button type="button" class="btn btn-outline-secondary">SAVE</button>
 					</form>
 				</div>
