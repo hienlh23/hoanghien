@@ -3,6 +3,8 @@ package com.anhngo.entity;
 import java.io.Serializable;
 import java.util.List;
 
+import com.anhngo.service.PasswordHashingService;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,8 +13,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-
+@Getter
+@Setter
 @Entity
 @Data
 @Table(name = "khachhang")
@@ -45,5 +50,6 @@ public class KhachHangEntity implements Serializable {
 	public String getCode() {
 	    return this.getCode();
 	}
-
+	  // Password hashing method
+   
 }
