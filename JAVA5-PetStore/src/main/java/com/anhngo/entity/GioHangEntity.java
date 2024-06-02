@@ -29,4 +29,5 @@ public class GioHangEntity implements Serializable {
 
 	@OneToMany(mappedBy = "gioHang")
 	private List<ChiTietGioHangEntity> chiTietGioHang;
+	
 }

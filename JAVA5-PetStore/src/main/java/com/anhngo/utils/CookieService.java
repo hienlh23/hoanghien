@@ -12,42 +12,27 @@ public class CookieService {
 	@Autowired
 	HttpServletRequest req;
 	@Autowired
-	HttpServletResponse res;
+	HttpServletResponse resp;
+	
+	
+	//Tạo cookie và lưu dữ liệu vào bên trong theo Tên - Dữ liệu truyền vào - Số ngày mà cookie có thể lưu - HttpServletResponse response 
+	public void create(String name, String value, int days, HttpServletResponse response) {
+        Cookie cookie = new Cookie(name, value);
+        cookie.setMaxAge(days * 24 * 60 * 60); // thời gian sống của cookie tính bằng giây
+        cookie.setPath("/"); // thiết lập đường dẫn cho cookie
+        response.addCookie(cookie); // thêm cookie vào phản hồi HTTP
+    }
 
-	public Cookie getCookies(String name) {
-		Cookie[] cookies = req.getCookies();
-		if (cookies != null) {
-			for (Cookie cookie : cookies) {
-				if (cookie.getName().equals(name)) {
-					return cookie;
-				}
-			}
-		}
-		return null;
-	}
-
-	public String getValue(String name) {
-		Cookie[] cookies = req.getCookies();
-		if (cookies != null) {
-			for (Cookie cookie : cookies) {
-				if (cookie.getName().equals(name)) {
-					return cookie.getValue();
-				}
-			}
-		}
-		return null;
-	}
-
-	public Cookie add(String name, String value, int hours) {
-		Cookie cookie = new Cookie(name, value);
-		cookie.setMaxAge(hours);
-		res.addCookie(cookie);
-		return cookie;
-	}
-
-	public void remove(String name) {
-		Cookie cookie = new Cookie(name, "");
-		cookie.setMaxAge(0);
-		res.addCookie(cookie);
-	}
+    public String getValue(String name, HttpServletRequest request) {
+        Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals(name)) {
+                    return cookie.getValue();
+                }
+            }
+        }
+        return null;
+    }
+	
 }
